@@ -1,0 +1,234 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html"; charset="UTF-8" http-equiv="content-type">
+    <title>Ajuda Pinyes</title>
+    <link rel="stylesheet" href="main.css">
+  </head>
+  <body>
+    <h1>COM FUNCIONA PINYES?</h1>
+    <h2>DESCRIPCIÓ DE LA INTERFÍCIE</h2>
+    <h3>PANTALLA INICIAL (INTERACCIÓ BASE DADES CASTELLERS)</h3>
+    <img title="Pantalla inicial" alt="Pantalla inicial" src="imatges/pant_inici.jpg"><br>
+    <h2>Índex:</h2>
+	<br>
+    <h3><a href="#barra">Barra de menús</a></h3>
+    <ul>
+      <li>Importa</li>
+      <ul>
+        <li><a href="#imp_comp">Components des d'arxiu...</a></li>
+        <li><a href="#imp_pinya">Pinya des d'arxiu...</a></li>
+      </ul>
+      <li>Exporta</li>
+      <ul>
+        <li><a href="#exp_comp">Components a arxiu</a></li>
+        <li><a href="#exp_pinya">Pinya a arxiu</a></li>
+        <li>Envia pinya per email (NA) -- Funció no implementada (29/04/2014)</li>
+      </ul>
+      <li>Imatge</li>
+      <ul>
+        <li><a href="#exp_imatge">Exporta imatge... (Escriptori) -- Funció només
+            disponible a les versions d'escriptori</a></li>
+      </ul>
+      <li>Ves a...:</li>
+      <ul>
+        <li><a href="#pestanyes"><span style="font-style: italic;">Pestanyes</span></a></li>
+      </ul>
+      <li>Ajuda</li>
+      <ul>
+        <li>Ajuda de l'aplicació</li>
+        <li>Quant a...</li>
+      </ul>
+      <li>Surt</li>
+      <ul>
+        <li>Surt</li>
+      </ul>
+    </ul>
+    <h3><a href="#castellers">Visualització i interacció amb la base de dades dels
+      castellers</a></h3>
+	<ul>
+		<li><a href="#ordre_taula">Ordre de la taula</a></li>
+		<li><a href="#refresc_taula">Refresc de la taula</a></li>
+		<li><a href="#mida_font">Mida de la font</a></li>
+		<li><a href="#esborrar_component">Esborrar component</a></li>
+		<li><a href="#presents">Presents a Si / Presents a No</a></li>
+		<li><a href="#mod_components">Modificació dels components</a></li>
+		<li><a href="#entrada_components">Entrada de components</a></li>
+	</ul>
+    <h3><a href="#pesta_pinyes"></a><a href="#pespinyes">Pestanyes de pinyes</a></h3>
+	<br>
+    <h4 style="left: 0px; top: 0px" id="barra">Barra de menús</h4>
+    <a href="#exp_pinya"> </a>
+    <h4 id="imp_comp">Importar components des d'arxiu</h4>
+    <p>Per tal de fer més fàcil la introducció de nous components a la base de
+      dades, existeix la possibilitat de fer la llista en un editor extern a
+      aquest programari i després importar aquesta llista. El format de la
+      llista ha de coincidir amb els camps de la base de dades per a una
+      correcta importació. El format del fitxer ha de ser:</p>
+    <p><span style="font-style: italic;">Posició,Nom,Alçada mans,Alçada
+        espatlla,Present o no a l'assaig</span></p>
+    <p>Posició:</p>
+    <p>Les possibles posicions són:</p>
+    "Pinya" -- Totes les posicions de la pinya que no siguin les següents<br>
+    "Primeres" -- Aqui s'inclouen totes les mans altes (Primeres Mans + Vents
+    (=Daus,=ma-i-ma), <br>
+    "Crosses"<br>
+    "Baixos"<br>
+    "Contraforts" (=Homes del darrere)<br>
+    "Agulles"<br>
+    <p>Nom:</p>
+    <p>NO posar ni punts ni comes per a una correcta importació. Els accents i
+      els caràcters "extranys" podrien provocar algun problema</p>
+    <p>Alçada mans:</p>
+    <p>L'alçada total del casteller amb les mans aixecades (en centímetres). De
+      0 a 300 cm.</p>
+    <p>Alçada espatlla:</p>
+    <p>L'alçada del casteller des dels peus fins a les espatlles (Per a fer peus
+      de folres) (en centímetres). De 0 a 300 cm.</p>
+    <p>Present o no a l'assaig o actuació:</p>
+    <p>0 si no és present, 1 si hi és.</p>
+    <p>Notes:</p>
+    <ul>
+      <li>S'han d'emplenar tots els camps. Si no és sap alguna alçada i no es
+        vol posar aproximada, posar 0.</li>
+      <li>Assegureu-vos que l'arxiu sigui de text i no tingui cap formatació
+        extra.</li>
+      <li>Segurament voldreu posar el mateix nom a "Pinya" i a alguna altra
+        posició. Això són dos camps</li>
+    </ul>
+    <p>Exemple de fitxer:</p>
+    <p>Pinya,Nom 1,186,131,0<br>
+      Pinya,Nom 2,181,131,1<br>
+      Crosses,Nom 3,181,131,0<br>
+      Pinya,Nom 4,193,137,0<br>
+      Agulles,Nom 5,193,137,0<br>
+      Pinya,Nom 6,226,157,0<br>
+      Primeres,Nom 7,226,157,0<br>
+      Pinya,Nom 8,205,144,0<br>
+      Contraforts,Nom 1,186,131,0<br>
+      Baixos,Nom 2,181,131,1<br>
+    </p>
+    <p>Això es pot fer editant un fitxer de text amb algun programari senzill
+      com la Llibreta de Windos o similar i guardant en format txt.</p>
+    <p>Una manera má intuitiva pot ser amb algun tipus de software de fulls de
+      calcul tipus Excel i guardar en format CSV, exemple:</p>
+    <p>Tenim la fulla formatada així:</p>
+    <img title="Fulla Components" alt="Full Calcul amb components" src="imatges/excel_comp.jpg"><br>
+    Guardem en format CSV (comma separated value)<br>
+    <img title="Imatge anomena i desa" alt="Anomena i desa com a csv" src="imatges/csv_comp.jpg"><br>
+    Ja podem importar l'arxiu des del programari:<br>
+    <img title="Importar components csv" alt="Importa csv" src="imatges/csv_comp_imp.jpg"><br>
+    Si desfes de fer el procés no veus els components importats, fes clic a
+    qualsevol dels encapçalament i els veuràs<br>
+    <img style="width: 723px; height: 479px;" title="Components ja importats" alt="Components ja importats"
+
+      src="imatges/comp_imp_fin.jpg"><br>
+    <p><br>
+    </p>
+    <h4 id="imp_pinya">Importar pinya des d'arxiu</h4>
+    <p>El programari és capaç d'importar pinyes fetes amb el mateix programari i
+      traspassar-les a un altre dispositiu o guardar-les per a una altra ocasió.</p>
+    <p>El procés és el següent:</p>
+    <p>Ens desplacem a la pestanya del tipus de castell que vulguem (en aquest
+      cas la pinya del cinc) i la netegem.</p>
+    <img style="width: 595px; height: 450px;" title="Pinya Neta" alt="Pinya després de netejar"
+
+      src="imatges/pinya_neta.jpg">
+    <p>Accionem el menú d'importar pinya i seleccionem el fitxer que vulguem
+      importar</p>
+    <p>Tot seguit apareix un cuadre de dialeg on hem d'introduir el nom que
+      vulguem donar-li a la pinya i el tipus de castell que és:</p>
+    <img title="Dialeg Importar Pinyes" alt="Dialeg per a aimportar pinyes" src="imatges/cuadre_imp_pinya.jpg"><br>
+    <br>
+    Pressionem d'acord i esperem, si tot està correcte el dispositiu començara a
+    importar la pinya. Aquest procés ha de fer un munt de comprobacions i
+    insercions a la base de dades, per tant trigarà una mica depenent del
+    maquinari fet servir.<br>
+    Aquest procés ha importat la pinya a la nostra base de dades i ara la podem
+    tractar ja com di fos del nostre programari<br>
+    Quan desaparegui el quade de dialeg seguirem les intruccions que apareixen a
+    la barra de missatges:<br>
+    <span style=" color:#008000;">"Refresca la llista de pinyes per a veure-la i prem Importar per a visualitzar-la"<br>
+      <img style="width: 236px; height: 267px;" title="Passos per a importar una pinya"
+
+        alt="Passos per a importar una pinya" src="imatges/passos_imp_pinya.jpg"><br>
+    </span>
+    <p>És a dir:</p>
+    <ol>
+      <li>Refrescar</li>
+      <li>Seleccionar</li>
+      <li>Importar</li>
+    </ol>
+    <p>Resultat final:</p>
+    <img style="width: 532px; height: 400px;" title="Resultat final importar pinya"
+
+      alt="Resultat final importar pinya" src="imatges/res_final_imp_pinya.jpg"><br>
+    <br>
+    <br>
+    <h4 id="exp_comp">Exportar components a un arxiu</h4>
+    Aquesta opció permet passar tots els component existents a la base de dades
+    a un fitxer de text per a poder-lo importar amb aquest mateix programari en
+    un altre dispositiu o installacio.<br>
+    <h4 id="exp_pinya">Exportar pinya a un arxiu</h4>
+    Aquesta opció permet passar la pinya actual a un fitxer de text per a
+    poder-la importar amb aquest mateix programari en un altre dispositiu o
+    installacio.<br>
+    <h4 id="exp_imatge">Imatge (Captura de pantalla)</a></h4>
+    Aquesta opció permet fer una captura de pantalla de l'area de treball.
+    Aquesta opció només està disponible a les versions per a sistemes
+    d'escriptori (Windows, MacOS i Linux)<br>
+    <h4 id="pestanyes">Ves a... Pestanyes</a></h4>
+    Des d'aquest menú ens podem desplaçar per les diferents pestanyes de
+    l'aplicació igual que si fessim clic a elles. Està pensada per als
+    dispositius on potser el tamany de les pestanyes sigui petit per a permetre
+    una comoda navegació<br>
+    <br>
+    <h3 id="castellers">Visualització i interacció amb la base de dades
+        dels castellers</a></h3>
+    <p>
+	<img alt="Taula dels Castellers" height="439" src="imatges/bbdd_castellers.jpg" width="770">Vista 
+	de la taula de castellers</p>
+	<h4 id="ordre_taula">Ordre de la taula</h4>
+	<p>La línia blava d'encapçalaments és interactiva, si fas clic a qualsevol 
+	d'ells canvia l'ordenació de la taula a aquell que hagis escollit. Si hi fas 
+	clic altre cop, canvia el sentit de l'ordenació<br>
+    </p>
+	<h4 id="refresc_taula">Refresc de la taula</h4>
+	<p>Si es necessita refrescar la taula després d'importar o afegir un 
+	component, fent clic a qualsevol dels encapçalaments es pot fer.</p>
+	<h4 id="mida_font">Mida de la font</h4>
+	<p>Els dos primers botons de la barra inferior augmenten 
+	o disminueixen el cos de lletra, això és molt útil als dispositius tàctils 
+	on el tamany de la l'inia pot dificultar la selecció de components </p>
+	<h4 id="esborrar_component">Esborrar component</h4>
+	<p>Per a esborrar un component, primer es selecciona a la taula i després es 
+	prem el boto "Esborra" a la barra inferior</p>
+	<h4 id="presents">Presents a Si / Presents a No</h4>
+	<p>Mitjançant els botons de la barra 
+	inferior, es poden colocar tots els components a si o no, depenent de com 
+	sigui més comode per a l'usuari.</p>
+	<p>Per a colocar un component individual a si o no, nomes cal fer clic a la 
+	seva fila i canviara el seu estat. Preferiblement a l'espai lliure de la 
+	dreta per que no s'activi la modificació del component.</p>
+	<p>ELS COMPONENTS QUE ESTIGUIN A "NO", NO APAREIXERAN A LA TAULA DE 
+	COMPONENTS DE LES DIFERENT PINYES</p>
+	<h4 id="mod_components">Modificació dels components</h4>
+	<p>Fent clic en el camp a canviar, es pot editar directament el camp que es 
+	vulgui canviar. Pot ser que hagis de fer clic dues vegades per la 
+	simultaneitat amb la funció de confirmar la presència del component o la 
+	seva selecció.</p>
+	<h4 id="entrada_components">Entrada de components</h4>
+	<p>Mitjançant el botó "Entra Casteller", es pot entrar un component nou a la 
+	base de dades. S'ha d'emplenar el quadre emergent que apareix:</p>
+	<p>
+	<img alt="Entrada de casteller" height="340" src="imatges/entrada_castellers.jpg" width="761">Han 
+	d'emplenar-se tots els camps, si no disposem d'alguna alçada, simplement la 
+	posem a 0.</p>
+	<p>És possible que després de la inserció del component, s'hagi de fer clic 
+	a algun encapçalamen per a que aparegui reflexat a la taula.</p>
+    <h3 id="pesta_pinyes">pESTANYES DE LES PINYES</h3>
+    <p>Vista general:</p>
+	<p>
+	<img alt="Vista de la pestanya de pinyes" height="492" src="imatges/pest_pinyes.jpg" width="738"></p>
+  </body>
+</html>
